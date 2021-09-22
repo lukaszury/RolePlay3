@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Armor : IAttackValue,IDefenseValue
+    public class Armor : IDefenseValue
     {
         public int DefenseValue
         {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace RoleplayGame : IAttackValue,IDefenseValue
+namespace RoleplayGame
 {
-    public class SpellsBook
+    public class SpellsBook : IAttackValue,IDefenseValue
     {
         public Spell[] Spells { get; set; }
         

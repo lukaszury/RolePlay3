@@ -2,6 +2,6 @@ namespace RoleplayGame
 {
     public interface IDefenseValue
     {
-        int DefenseValue();
+        int  DefenseValue {get;}
     }
 }

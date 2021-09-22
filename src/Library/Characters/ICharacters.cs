@@ -2,12 +2,10 @@ namespace RoleplayGame
 {
     public interface ICharacter
     {
-        int helath
-        string name
-        int AttackValue();
-        int DefenseValue();
-        int Health();
-        void ReceiveAttack();
+        int AttackValue {get;}
+        int DefenseValue {get;}
+        int Health {get;}
+        void ReceiveAttack(int power);
         void Cure();
     }
 }
