@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace RoleplayGame
+namespace RoleplayGame : IAttackValue,IDefenseValue
 {
     public class SpellsBook
     {
