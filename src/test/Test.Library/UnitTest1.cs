@@ -79,6 +79,15 @@ namespace RoleplayGame
         /*Por la misma razon que la del anterior test, este se hace para detemrinar si la implemnetacion de las
         interfaces acarrean algun error en el programa. En este caso, se testea El valor de defensa del ago, el cual esta
         compuesto por el valor de defensa de su arma y el de su hechixo en el libro de hechizos*/ 
-
+        
+        [Test]
+        public void TestCharacterCreator()
+        {
+            ICharacter legolas = new Archer("Legolas");
+            int expected= 100;
+            int actual = legolas.Health;
+            Assert.AreEqual(expected,actual);
+        }/* Se testea la la creacion de los personajes con el tipo ICharacter, en este caso, la del arquero. Esto es para ver si la
+            implementacion de la interfaz trae problemas no deseados*/
     }
 }

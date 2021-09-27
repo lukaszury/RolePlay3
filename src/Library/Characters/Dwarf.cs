@@ -3,6 +3,7 @@ namespace RoleplayGame
     public class Dwarf : ICharacter
     {
         private int health = 100;
+        
 
         public Dwarf(string name)
         {
@@ -21,7 +22,14 @@ namespace RoleplayGame
         {
             get
             {
-                return Axe.AttackValue;
+                if (Axe != null)
+                {
+                    return Axe.AttackValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
@@ -29,7 +37,22 @@ namespace RoleplayGame
         {
             get
             {
-                return Shield.DefenseValue + Helmet.DefenseValue;
+                if (Helmet != null && Shield != null)
+                {
+                    return Shield.DefenseValue + Helmet.DefenseValue;
+                }
+                if (Helmet != null)
+                {
+                    return Helmet.DefenseValue;
+                }
+                if (Shield != null)
+                {
+                    return Shield.DefenseValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 

@@ -19,7 +19,22 @@ namespace RoleplayGame
         {
             get
             {
-                return SpellsBook.AttackValue + Staff.AttackValue;
+                if (Staff != null && SpellsBook != null)
+                {
+                    return SpellsBook.AttackValue + Staff.AttackValue;
+                }
+                if (Staff != null)
+                {
+                    return Staff.AttackValue;
+                }
+                if (SpellsBook != null)
+                {
+                    return SpellsBook.AttackValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
@@ -27,7 +42,22 @@ namespace RoleplayGame
         {
             get
             {
-                return SpellsBook.DefenseValue + Staff.DefenseValue;
+                if (Staff != null && SpellsBook != null)
+                {
+                    return SpellsBook.DefenseValue + Staff.DefenseValue;
+                }
+                if (Staff != null)
+                {
+                    return Staff.DefenseValue;
+                }
+                if (SpellsBook != null)
+                {
+                    return SpellsBook.DefenseValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
