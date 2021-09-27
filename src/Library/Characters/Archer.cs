@@ -19,7 +19,14 @@ namespace RoleplayGame
         {
             get
             {
-                return Bow.AttackValue;
+                if (Bow != null)
+                {
+                    return Bow.AttackValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
@@ -27,7 +34,14 @@ namespace RoleplayGame
         {
             get
             {
-                return Helmet.DefenseValue;
+                if (Helmet != null)
+                {
+                    return Helmet.DefenseValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 

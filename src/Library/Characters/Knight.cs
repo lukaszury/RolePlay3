@@ -21,7 +21,14 @@ namespace RoleplayGame
         {
             get
             {
-                return Sword.AttackValue;
+                if (Sword != null)
+                {
+                    return Sword.AttackValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
@@ -29,7 +36,22 @@ namespace RoleplayGame
         {
             get
             {
-                return Armor.DefenseValue + Shield.DefenseValue;
+                if (Armor != null && Shield != null)
+                {
+                    return Shield.DefenseValue + Armor.DefenseValue;
+                }
+                if (Armor != null)
+                {
+                    return Armor.DefenseValue;
+                }
+                if (Shield != null)
+                {
+                    return Shield.DefenseValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
