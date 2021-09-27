@@ -7,8 +7,6 @@ namespace RoleplayGame
         public Archer(string name)
         {
             this.Name = name;
-            this.Bow = new Empty();
-            this.Helmet = new Empty();
         }
 
         public string Name { get; set; }
