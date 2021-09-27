@@ -11,15 +11,22 @@ namespace RoleplayGame
 
         public string Name { get; set; }
         
-        public Bow Bow { get; set; }
+        public IAttackValue Bow { get; set; }
 
-        public Helmet Helmet { get; set; }
+        public IDefenseValue Helmet { get; set; }
 
         public int AttackValue
         {
             get
             {
-                return Bow.AttackValue;
+                if (Bow != null)
+                {
+                    return Bow.AttackValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
@@ -27,7 +34,14 @@ namespace RoleplayGame
         {
             get
             {
-                return Helmet.DefenseValue;
+                if (Helmet != null)
+                {
+                    return Helmet.DefenseValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 

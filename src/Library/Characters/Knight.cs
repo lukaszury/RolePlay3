@@ -11,17 +11,24 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public Sword Sword { get; set; }
+        public IAttackValue Sword { get; set; }
 
-        public Shield Shield { get; set; }
+        public IDefenseValue Shield { get; set; }
 
-        public Armor Armor { get; set; }
+        public IDefenseValue Armor { get; set; }
 
         public int AttackValue
         {
             get
             {
-                return Sword.AttackValue;
+                if (Sword != null)
+                {
+                    return Sword.AttackValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
@@ -29,7 +36,22 @@ namespace RoleplayGame
         {
             get
             {
-                return Armor.DefenseValue + Shield.DefenseValue;
+                if (Armor != null && Shield != null)
+                {
+                    return Shield.DefenseValue + Armor.DefenseValue;
+                }
+                if (Armor != null)
+                {
+                    return Armor.DefenseValue;
+                }
+                if (Shield != null)
+                {
+                    return Shield.DefenseValue;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
