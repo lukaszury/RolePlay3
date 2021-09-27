@@ -11,11 +11,11 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public Sword Sword { get; set; }
+        public IAttackValue Sword { get; set; }
 
-        public Shield Shield { get; set; }
+        public IDefenseValue Shield { get; set; }
 
-        public Armor Armor { get; set; }
+        public IDefenseValue Armor { get; set; }
 
         public int AttackValue
         {

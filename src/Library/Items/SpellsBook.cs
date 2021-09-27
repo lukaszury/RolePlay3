@@ -11,7 +11,7 @@ namespace RoleplayGame
             get
             {
                 int value = 0;
-                foreach (Spell spell in this.Spells)
+                foreach (IAttackValue spell in this.Spells)
                 {
                     value += spell.AttackValue;
                 }
@@ -24,7 +24,7 @@ namespace RoleplayGame
             get
             {
                 int value = 0;
-                foreach (Spell spell in this.Spells)
+                foreach (IDefenseValue spell in this.Spells)
                 {
                     value += spell.DefenseValue;
                 }

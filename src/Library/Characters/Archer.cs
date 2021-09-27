@@ -11,9 +11,9 @@ namespace RoleplayGame
 
         public string Name { get; set; }
         
-        public Bow Bow { get; set; }
+        public IAttackValue Bow { get; set; }
 
-        public Helmet Helmet { get; set; }
+        public IDefenseValue Helmet { get; set; }
 
         public int AttackValue
         {
