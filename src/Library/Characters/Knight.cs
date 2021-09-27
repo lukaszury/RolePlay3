@@ -7,6 +7,7 @@ namespace RoleplayGame
         public Knight(string name)
         {
             this.Name = name;
+            
         }
 
         public string Name { get; set; }
