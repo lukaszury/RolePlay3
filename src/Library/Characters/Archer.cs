@@ -6,7 +6,6 @@ namespace RoleplayGame
 
         public Archer(string name) : base(name)
         {
-            this.Name = name;
             this.Helmet = new Helmet();
         }
 

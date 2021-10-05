@@ -7,7 +7,6 @@ namespace RoleplayGame
 
         public Dwarf(string name) : base(name)
         {
-            this.Name = name;
             this.Axe = new Axe();
         }
 
