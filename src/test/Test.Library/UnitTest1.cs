@@ -79,7 +79,7 @@ namespace RoleplayGame
         /*Por la misma razon que la del anterior test, este se hace para detemrinar si la implemnetacion de las
         interfaces acarrean algun error en el programa. En este caso, se testea El valor de defensa del ago, el cual esta
         compuesto por el valor de defensa de su arma y el de su hechixo en el libro de hechizos*/ 
-        
+        /*
         [Test]
         public void TestCharacterCreator()
         {
@@ -89,5 +89,30 @@ namespace RoleplayGame
             Assert.AreEqual(expected,actual);
         }/* Se testea la la creacion de los personajes con el tipo ICharacter, en este caso, la del arquero. Esto es para ver si la
             implementacion de la interfaz trae problemas no deseados*/
+
+        [Test]
+        public void TestCharacterAttackValueInheritance()
+        {
+            Character arthur = new Knight("Arthur");
+            int expected = 20;
+            int actual = arthur.AttackValue;
+            Assert.AreEqual(expected,actual);
+        }/* Se testea el daño obtenido por una property heredado y sobreescrito de la clase 
+        Character, por la clase Knight
+        */
+
+        [Test]
+        public void TestCharacterReceivedDamageInheritance()
+        {
+            Character dwarf = new Dwarf("Enano de boca");
+            Character archer = new Archer("Sylvanas");
+            archer.ReceiveAttack(dwarf.AttackValue);
+            int expected = 93;
+            int actual = archer.Health;
+            Assert.AreEqual(expected,actual);
+
+        }/* Se testea los metodos heredados de Character y sobreescritos por las clases Dwarf y 
+        Archer para ver si interactuan sin problemas
+        */
     }
 }

@@ -1,21 +1,20 @@
 namespace RoleplayGame
 {
-    public class Archer : ICharacter
+    public class Archer : Character
     {
         private int health = 100;
 
-        public Archer(string name)
+        public Archer(string name) : base(name)
         {
             this.Name = name;
+            this.Helmet = new Helmet();
         }
 
-        public string Name { get; set; }
-        
         public IAttackValue Bow { get; set; }
 
         public IDefenseValue Helmet { get; set; }
 
-        public int AttackValue
+        public override int AttackValue
         {
             get
             {
@@ -30,7 +29,7 @@ namespace RoleplayGame
             }
         }
 
-        public int DefenseValue
+        public override int DefenseValue
         {
             get
             {
@@ -45,19 +44,19 @@ namespace RoleplayGame
             }
         }
 
-        public int Health
+        public override int Health
         {
             get
             {
                 return this.health;
             }
-            private set
+            set
             {
                 this.health = value < 0 ? 0 : value;
             }
         }
 
-        public void ReceiveAttack(int power)
+        public override void ReceiveAttack(int power)
         {
             if (this.DefenseValue < power)
             {
@@ -65,7 +64,7 @@ namespace RoleplayGame
             }
         }
 
-        public void Cure()
+        public override void Cure()
         {
             this.Health = 100;
         }
